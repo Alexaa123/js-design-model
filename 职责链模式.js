@@ -60,11 +60,10 @@ Function.prototype.after = function( fn ){
     return function(){
         var ret = self.apply(this, arguments);
         console.log('333', ret)
-      if ( ret === 'nextSuccessor' ){
-          return fn.apply( this, arguments );
-      }
-
-      return ret;
+        if ( ret === 'nextSuccessor' ){
+            return fn.apply( this, arguments );
+        }
+        return ret;
     }
 };
 
